@@ -25,7 +25,7 @@ a {
     ;
 }
 a:hover {
-    border-bottom: 3px solid #6474ff
+    border-bottom: 2px dotted #6474ff
 }
 
   ul {
@@ -36,4 +36,19 @@ a:hover {
   
   li {
     margin-left: 20px;
+  }
+
+  @media only screen and (max-width: 600px) {
+    div {
+      width: 90%;
+      margin: 10% auto;
+    }
+    h1 {
+      font-size: 24px !important;
+      line-height: 1.4rem;
+    }
+    p {
+      font-size: 0.9rem;
+      line-height: 1.3rem;
+    }
   }
