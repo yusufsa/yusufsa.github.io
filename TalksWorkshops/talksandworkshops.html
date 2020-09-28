@@ -1,0 +1,642 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Yusuf Talks and Workshops</title><style>
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="0d3c149b-4dd1-4a6e-8a42-1b9dd5675cd2" class="page sans"><header><img class="page-cover-image" src="Yusuf%20Talks%20and%20Workshops%20b3903f46ad4b4f9099ff9cd0f3f8cfcc/SDP_programpage_feature_200729.jpg" style="object-position:center 50%"/><div class="page-header-icon page-header-icon-with-cover"><span class="icon">🦜</span></div><h1 class="page-title">Yusuf Talks and Workshops</h1></header><div class="page-body"><blockquote id="2a5952cb-f490-4572-9a14-8c9cb599b10b" class="">The following are some of the talks I&#x27;ve given, workshops I&#x27;ve facilitated, and panels I&#x27;ve moderated. From 2012 to 2020, I&#x27;ve presented my work or run workshops at Stanford, Harvard, MIT, the London School of Economics, and a number of universities from South Africa to Egypt. </blockquote><p id="f1b871a2-3947-4cfa-b2e4-81e22407a7ba" class="">
+</p><figure class="block-color-yellow_background callout" style="white-space:pre-wrap;display:flex" id="22e0533c-f1dd-4e0a-9242-ace728c6b8ac"><div style="font-size:1.5em"><span class="icon">👉🏽</span></div><div style="width:100%">When possible, I prefer workshops over talks because I believe people learn best when they actively grapple with ideas and engage in design-based activities. Workshops also offer more space for connecting with and learning from everyone in the room. </div></figure><nav id="fe9d63ec-3342-49ac-bbde-52cb1eb2d351" class="block-color-gray table_of_contents"><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#2457800a-f7cd-4e11-935b-31150c02d880">2020</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#3f2551fc-d8aa-4ab0-8a74-7b587b9dd173"><strong>IDEO Teachers Guild: Iterative and inclusive design</strong></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#189f545c-c576-41ed-8961-08062b3f5561"><strong>ALX: Rapid Prototyping</strong></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#a27b1303-d38e-44ee-8a6c-80c8cb7d8975">Stanford d.school&#x27;s <em>Designing for Digital Agency</em></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#f64bcc39-79ff-4f5e-a576-80d39c0d2baf">WW Graduate School for Teaching</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#c251a445-7448-456c-bb12-f97ac1b74623">MIT Jamil World Education Lab: Higher Education in Africa</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#a9c8e0a5-b446-4af6-a763-cadd50a5fe29">2019</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#27f9d1ce-4994-4bb7-82da-f6effcbef048">Inventing the future of learning at the MIT Media Lab</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#2141effd-26b0-4043-b191-489a6c8ef540">Connected Learning Summit (CLS)</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#5d288d51-68a7-4c3e-951f-bf9444becbe8">Harvard Africa Business Conference</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#8881d48d-bffd-42a1-a5ae-91f4fdd8a474">Creative Computing Workshop at the Play! Africa Conference</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#7192dde3-49b7-4541-9b48-276c17107238">Creative Computing Teacher Professional Development in Rural South Africa</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#39683969-b4f4-45fe-9e5a-3936f5370b01">Computer Clubhouse Summit: Bringing a community organizing approach to designing a learning community. </a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#60f49884-034f-423b-8277-b86cdac37c30">2018</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#a47ff967-92fe-488f-a444-969a820e3bc6">Designing a project-based computer science degree at a new Rwandan university</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#2a6d28c9-b847-4c62-9aab-150afbf54291">Global Challenges Retreats</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#a601fe86-011a-4394-9799-b8efb9d1603a">African Leadership University (2014 - 2018)</a></div></nav><h2 id="2457800a-f7cd-4e11-935b-31150c02d880" class="block-color-pink_background">2020</h2><div id="4c52e783-f49e-4461-8100-3966c020971f" class="column-list"><div id="7a219318-1862-4b49-ae7b-548e10c48c59" style="width:62.5%" class="column"><h3 id="3f2551fc-d8aa-4ab0-8a74-7b587b9dd173" class=""><strong>IDEO Teachers Guild: Iterative and inclusive design</strong></h3><p id="a955cfd8-736a-4f5f-afe8-36a4599685f6" class=""><strong>60-min Virtual Workshop</strong></p><ul id="f1e31006-6af7-41f0-8f47-107557c1681a" class="bulleted-list"><li><strong>What: </strong>Facilitated a virtual workshop on strategies for iterative and inclusive design under uncertain conditions. Participants prototyped &quot;two-sentence plans&quot; to simply communicate what they&#x27;re trying with their communities and ideated strategies for involving non-dominant voices. </li></ul><ul id="9534a1cb-9e08-48e5-953e-8af90a085b1c" class="bulleted-list"><li><strong>Who:</strong> ~50 educators and school leaders from across the US preparing for the 2020-21 academic year during COVID</li></ul><ul id="93613775-21cc-41d7-95b9-80a476a1f127" class="bulleted-list"><li><strong>Context</strong>: Part of a <a href="https://docs.google.com/presentation/d/1sikI4uj87_M3SnZKjnvzlN-HrTY9SwuKwgrm7kAVRvU/edit#slide=id.g8d1f8ba044_0_57">weeklong summit</a> hosted by IDEO&#x27;s Teacher&#x27;s Guild and School ReTool</li></ul><ul id="f7d36f59-0503-4134-8e1a-f9b223ef57e2" class="bulleted-list"><li><strong>For more</strong>: <a href="https://docs.google.com/presentation/d/1JTArmLvqaOUWUpQNB_IaU-rVr8opw5iRJhy1WR5_H1M/edit#slide=id.g8c39631843_0_152">Slides</a> and <a href="https://ideo.zoom.us/rec/share/_-IpNOyvpkVJHZXPxlrGdPEqRMPfeaa80yQf-vJZxE1gZuasSDAvvd-Aa_BrcZqx">recording</a> (password: #ez1qL^#)</li></ul><ul id="971cc445-166a-43a3-9c82-e247df478f9a" class="bulleted-list"><li><strong>When</strong>: July 2020, Zoom!</li></ul></div><div id="43763f54-9ebe-4d7b-83bb-9bbabdea6fdc" style="width:37.5%" class="column"><figure id="b3903f46-ad4b-4f90-99ff-9cd0f3f8cfcc" class="image"><a href="Yusuf%20Talks%20and%20Workshops%20b3903f46ad4b4f9099ff9cd0f3f8cfcc/Screen_Shot_2020-08-05_at_8.25.25_PM.png"><img style="width:1830px" src="Yusuf%20Talks%20and%20Workshops%20b3903f46ad4b4f9099ff9cd0f3f8cfcc/Screen_Shot_2020-08-05_at_8.25.25_PM.png"/></a></figure><figure id="eb7baa46-7ce0-44eb-849f-1fa3e2d22209" class="image"><a href="Yusuf%20Talks%20and%20Workshops%20b3903f46ad4b4f9099ff9cd0f3f8cfcc/Screen_Shot_2020-08-05_at_8.24.24_PM.png"><img style="width:1614px" src="Yusuf%20Talks%20and%20Workshops%20b3903f46ad4b4f9099ff9cd0f3f8cfcc/Screen_Shot_2020-08-05_at_8.24.24_PM.png"/></a></figure><figure id="af054d70-c840-455a-8382-aefb06531c16" class="image"><a href="Yusuf%20Talks%20and%20Workshops%20b3903f46ad4b4f9099ff9cd0f3f8cfcc/Screen_Shot_2020-08-05_at_8.25.59_PM.png"><img style="width:1630px" src="Yusuf%20Talks%20and%20Workshops%20b3903f46ad4b4f9099ff9cd0f3f8cfcc/Screen_Shot_2020-08-05_at_8.25.59_PM.png"/></a></figure><p id="37975680-670c-48ca-85df-eb0acb1f5e78" class="">
+</p></div></div><hr id="b9acddb3-95a8-47ba-a3c9-4a24cb45f291"/><h3 id="189f545c-c576-41ed-8961-08062b3f5561" class=""><strong>ALX: Rapid Prototyping</strong></h3><p id="f579f867-4656-4bfe-8a2b-b6cded3fb81f" class=""><strong>90-min Virtual Workshop</strong></p><div id="227b40b2-523c-45a1-9ac5-01a2e9ba0782" class="column-list"><div id="90c1064b-558d-4ac7-a898-ddc5941d5e95" style="width:50%" class="column"><ul id="d6818a77-4871-44b8-8002-2df02d66c316" class="bulleted-list"><li><strong>Challenge</strong>: ALX offers coding bootcamp style 6-month programs in business, data-science, and other domains. In response to the pandemic and a significant philanthropic investment, they initiated a six-week design sprint to prototype ideas for new programs and tech. The team had been stuck in ideation and early design research and I was brought in to help turn ideas into testable prototypes.   </li></ul><ul id="a3f4be83-aedc-4570-a9fc-b2f42fc9ec69" class="bulleted-list"><li><strong>What</strong>: Facilitated a 90-min workshop where participants rapidly prototyped ideas into super low-fidelity prototypes of experiences and products. </li></ul><ul id="5015e66e-d9e9-4262-a928-ac5c225d7321" class="bulleted-list"><li><strong>Who</strong>: 12 person design team working from Lagos, Nairobi, Johannesburg, Kigali, and Mauritius. </li></ul><ul id="61aa00fe-6dfe-4c66-9540-ad8e7d6a2b64" class="bulleted-list"><li><strong>For More</strong>: <a href="https://app.milanote.com/1JNINA1kmnyte4?p=ZSfbgTECH77">This Milanote Board</a> includes slides, documentation from the workshop, and some of my design notes and debrief. </li></ul><ul id="77136f1b-2482-4fa3-93c2-f5a868b71db2" class="bulleted-list"><li><strong>When</strong>: June 2020, Zoom</li></ul></div><div id="2986f2f3-9a8b-4bae-b45c-7bd4b0d0006d" style="width:50%" class="column"><figure id="82aa406e-dd67-463d-9721-23ffe284b47d" class="image"><a href="Yusuf%20Talks%20and%20Workshops%20b3903f46ad4b4f9099ff9cd0f3f8cfcc/Screen_Shot_2020-08-06_at_10.17.00_AM.png"><img style="width:1676px" src="Yusuf%20Talks%20and%20Workshops%20b3903f46ad4b4f9099ff9cd0f3f8cfcc/Screen_Shot_2020-08-06_at_10.17.00_AM.png"/></a></figure><figure id="a5da1cae-0890-41bf-b383-8090a0a83e14" class="image"><a href="Yusuf%20Talks%20and%20Workshops%20b3903f46ad4b4f9099ff9cd0f3f8cfcc/Screen_Shot_2020-08-06_at_10.23.19_AM.png"><img style="width:2286px" src="Yusuf%20Talks%20and%20Workshops%20b3903f46ad4b4f9099ff9cd0f3f8cfcc/Screen_Shot_2020-08-06_at_10.23.19_AM.png"/></a></figure></div></div><hr id="8cd0bd55-0ac6-4dc7-9245-dd7e66026eb8"/><h3 id="a27b1303-d38e-44ee-8a6c-80c8cb7d8975" class="">Stanford d.school&#x27;s <em>Designing for Digital Agency</em></h3><p id="d955cab2-965f-4b02-9774-bcce68c69153" class="">Guest coach in a studio-based course on designing digital learning tools and experiences. I worked closely with two teams. May 2020. </p><p id="5ddb2ff9-0f80-4af7-a74e-8f94f2474a12" class="">
+</p><hr id="69ffd1bc-5bed-40f2-8975-39468ead46da"/><h3 id="f64bcc39-79ff-4f5e-a576-80d39c0d2baf" class="">WW Graduate School for Teaching</h3><p id="083b6395-eafe-45f9-862c-cd0a270027b3" class="">I facilitated three workshops in January and February 2020 on storyboarding and lesson prototyping with a group of ten teacher candidates (graduate students preparing to become licensed teachers). </p><p id="9bfdf268-cbf6-4127-b3d0-1d492d9ae0e2" class="">
+</p><hr id="b2dcfccf-7ff6-4cfc-ba40-114423fcd32e"/><h3 id="c251a445-7448-456c-bb12-f97ac1b74623" class="">MIT Jamil World Education Lab: Higher Education in Africa</h3><p id="0416b852-f86c-46a1-a46c-073616dd1927" class="">I shared my work leading ALU&#x27;s faculty team with a group of visiting professors from different African universities who were spending the semester at MIT. We brainstormed strategies for introducing ambitious pedagogy within tight resource constraints at their home universities. </p><p id="a09fe2ab-12be-4fc9-9b89-bc06288fe832" class="">
+</p><hr id="4716bd2a-cb99-4ac4-a0e6-fd4156a70741"/><h2 id="a9c8e0a5-b446-4af6-a763-cadd50a5fe29" class="block-color-teal_background">2019</h2><h3 id="27f9d1ce-4994-4bb7-82da-f6effcbef048" class="">Inventing the future of learning at the MIT Media Lab</h3><p id="193cef83-c948-4037-b505-1ba9c478f973" class="">I presented my research and introduced the work of the Lifelong Kindergarten Group and other research groups at the Media Lab to a group of MIT and Harvard participants. I also did a number of versions of this work for corporations, Media Lab member companies, and education organizations (tech companies, schools, governments). </p><p id="3ee2f8ec-d798-41fd-a602-c177a71db75d" class="">
+</p><h3 id="2141effd-26b0-4043-b191-489a6c8ef540" class="">Connected Learning Summit (CLS)</h3><p id="fddb107d-2b31-4ff8-ba70-da546cf5b1ab" class="">Presented in three sessions during the 2019 CLS: </p><ol id="904bf13b-c838-4092-81e6-30f6b3a208bf" class="numbered-list" start="1"><li><strong>A workshop on remixable learning design tools</strong>: I introduces principles from our work and invited participants to hack existing guides and explore how to support others in remixing their own work. </li></ol><ol id="646b874c-ba11-410b-aa87-20718cafc627" class="numbered-list" start="2"><li><strong>Strategies for localizing and translating Scratch into 50+ languages</strong> (with Chris Garrity and Champika Fernando). </li></ol><ol id="fa755503-386e-4d1b-b6bf-5c751563fef6" class="numbered-list" start="3"><li><strong>A symposium on spreading creative learning around the world</strong>. I shared my work with South Africa&#x27;s Ministry of Education and other organizations in South Africa to (a) introduce a digital skills for all curriculum nationally and (b) pilot aspects of that curriculum and what a creative form of teacher development might look like with a partner org in rural Kwa-Zulu Natal. </li></ol><p id="f77c60f7-38a0-4c11-81ec-b760043bcd09" class="">
+</p><hr id="156f5bc2-77ed-4bcd-9f0c-c0011c6dda91"/><h3 id="5d288d51-68a7-4c3e-951f-bf9444becbe8" class="">Harvard Africa Business Conference</h3><p id="b37306a5-f549-4f57-852f-c24e0373963c" class="">Moderated the Education Panel. </p><p id="7d754091-e903-4e5e-9469-1d42c5d0cff0" class="">
+</p><hr id="c9f1779f-fcc8-4d6a-97f9-11872b115c62"/><h3 id="8881d48d-bffd-42a1-a5ae-91f4fdd8a474" class="">Creative Computing Workshop at the Play! Africa Conference</h3><p id="f09b4feb-a6d3-4c93-bfde-4743a93c3a49" class="">We were invited by the LEGO Foundation and the South African Ministry of Education to introduce conference participants to the Scratch programming language and to model what creative facilitation might look like. Our workshop was oversubscribed and included participants ranging from classroom teachers who work in low-resource contexts to members of South Africa&#x27;s Ministry of Education and a range of nonprofits and education organizations from across southern Africa. </p><p id="2c8cd25a-a5d5-468d-a8af-7c34571d471e" class="">
+</p><hr id="763e353b-a203-420c-aba1-8cfcf84b72e3"/><h3 id="7192dde3-49b7-4541-9b48-276c17107238" class="">Creative Computing Teacher Professional Development in Rural South Africa</h3><p id="cc268e19-63d4-4a4f-9fab-faf52da6e466" class="">I co-facilitated a creative computing workshop introducing teachers to how they might use Scratch within the curriculum and resource constraints of low-resourced township public schools. The teachers (15 of them) came from rural and township public schools in Kwa-Zulu Natal, South Africa. I co-planned and facilitated the workshop with a grassroots teacher organization based out of Durban and Johannesburg South Africa. </p><p id="ea83b2aa-2878-40c9-9e6f-1288f3d3f5cf" class="">The goal of the workshop was twofold: (a) empower the educators we worked with to use Scratch offline in ways that empower kids to work on extended, ambitious projects and (b) to pilot how the Ministry of Education might introduce computing in low-resourced settings as part of an ambitious nation-wide digital skills for all curriculum. </p><p id="1d143f69-5bf9-4f53-96ea-edfd47339f7d" class="">
+</p><hr id="3ea1592e-a7cd-4231-90a8-c648dcfab85a"/><h3 id="39683969-b4f4-45fe-9e5a-3936f5370b01" class="">Computer Clubhouse Summit: Bringing a community organizing approach to designing a learning community. </h3><p id="25676278-b3f9-4316-bb5d-8c3ab1222887" class="">I facilitated a workshop on bringing community organizing principles to designing and leading a computer clubhouse. This included lessons on coaching, on distributing leadership to youth, and on building community power. </p><p id="e398aa90-d2fb-4725-8dee-4365292e0e27" class="">
+</p><hr id="8d7a01b5-a53e-4347-9239-a70e72f706e3"/><h2 id="60f49884-034f-423b-8277-b86cdac37c30" class="block-color-orange_background">2018</h2><h3 id="a47ff967-92fe-488f-a444-969a820e3bc6" class="">Designing a project-based computer science degree at a new Rwandan university</h3><p id="1b0835f4-9669-4eb3-86fc-fb8217f97f84" class="">Presented my work piloting project-based degrees in computer science to the Lifelong Kindergarten Research Group and Scratch Team. </p><p id="b7d705b4-04d1-42fc-98a7-b097f6502e2c" class="">
+</p><hr id="9754ac3d-1746-460b-8833-309ab3833bdd"/><h3 id="2a6d28c9-b847-4c62-9aab-150afbf54291" class="">Global Challenges Retreats</h3><p id="6aa6d35b-9203-4b1e-8972-fef99823cf23" class="">I facilitated two organization wide retreats (with 100+ people each) in Rwanda and Mauritius. We introduced the organization to our new project-based programs and invited participants to ideate and contribute to different parts of our program development through design-charrettes. </p><p id="33bcdccf-8f20-4e04-9380-fd46a923047b" class="">
+</p><h2 id="a601fe86-011a-4394-9799-b8efb9d1603a" class="block-color-red_background">African Leadership University (2014 - 2018)</h2><p id="8ab52d46-485a-4d75-a314-d24c90c1dbaa" class="">In my role as Director of Degree Programs, I regularly gave talks to our entire student body (~500 students), our staff, and our faculty teams. I also facilitated a number of workshops ranging from sessions on unlearning fixed mindset and developing your growth mindset muscles to discussion circles with students on African history. </p><p id="e23a18da-6e20-4904-8a49-fb8eb5d35a54" class="">
+</p><p id="b2b1da01-aeee-4455-ace2-8c5d7a8c745b" class="">
+</p></div></article></body></html>
