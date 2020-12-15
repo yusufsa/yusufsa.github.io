@@ -15,6 +15,12 @@ p {
     color: #333333
 }
 
+p2 {
+    font-size: 0.8rem;
+    line-height: 1.0rem;
+    color: #333333
+}
+
 h1 {
     
 }
@@ -60,6 +66,17 @@ a:hover {
     padding: 0 6px;
     float: left;
     width: 24.99999%;
+  }
+
+  .footer {
+    padding-top: 60px;
+    padding-bottom: 40px;
+    -webkit-box-align: start;
+    -webkit-align-items: flex-start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    background-color: #fff8e8;
+    text-align: center;
   }
   
   @media only screen and (max-width: 700px) {
